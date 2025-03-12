@@ -1,5 +1,12 @@
 // src/App.jsx
 
+// ------------------------------------------------------------------------ Imports
+
+import './App.css';
+import WeatherForecast from "./components/WeatherForecast/WeatherForecast.jsx";
+
+// ------------------------------------------------------------------------ Constants
+
 const weatherForecasts = [
   {
     day: 'Mon',
@@ -38,20 +45,27 @@ const weatherForecasts = [
   },
 ];
 
+// ------------------------------------------------------------------------ App
 
 const App = () => {
-
+  console.log('made it to here');
   return (
     <>
       <h1>Weather App</h1>
       <section>
-        {/* weather data hurr */}
+        {weatherForecasts.map((forecast, index) => (
+          < WeatherForecast key={index} { ...forecast } />
+        ))}
       </section>
     </>
   );
 };
 
 export default App;
+
+// ------------------------------------------------------------------------ Code Graveyard
+
+// key={index}
 
 
 // import { useState } from 'react'
